@@ -1,0 +1,11 @@
+# Ignore executable files
+*.exe
+
+# Ignore intermediate files
+*.ilk
+*.obj
+
+# Ignore PCB files
+*.pcb
+
+*.pdb
