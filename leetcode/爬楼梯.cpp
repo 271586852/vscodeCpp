@@ -1,14 +1,14 @@
+#include <vector>
+
 class Solution {
 public:
     int climbStairs(int n) {
-        int i;
-        int a[45];
-        a[0] = 0;
+        std::vector<int> a(n+1);
+        a[0] = 1;
         a[1] = 1;
-        a[2] = 2;
-        for (int m = 3; m <= n; m++)
+        for (int m = 2; m <= n; m++)
         {
-            a[m]=a[m-1]+a[m-2];
+            a[m] = a[m-1] + a[m-2];
         }
         return a[n];
     }
