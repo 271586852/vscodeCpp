@@ -1,6 +1,5 @@
-// 1、数组长度
-// 2、数字遍历
-// 3、数字输出
+// nums.size() 为数组的大小,sizeof(nums)为数组的大小*数组的元素大小
+// insert和push_back的区别
 
 #include <iostream>
 #include <stack>
