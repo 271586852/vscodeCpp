@@ -1,11 +1,7 @@
-#include <iostream>
-#include <stack>
-#include <string>
-#include <vector>
-#include <algorithm>
-#include <numeric>
-#include <functional>
 
+#include <algorithm>
+
+//递归思路
 
 //  Definition for a binary tree node.
   struct TreeNode {
@@ -17,14 +13,24 @@
       TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left), right(right) {}
   };
  
-
 class Solution {
+    int ans;
+
+    int depth(TreeNode* rt){
+        if(rt == NULL){
+            return 0;
+        }
+        int L = depth(rt->left);
+        int R = depth(rt->right);
+        ans = std::max(ans, L+ R +1);
+        return std::max(L,R) + 1;
+    }
+
+
 public:
-    TreeNode* invertTree(TreeNode* root) {
-        if (root == nullptr) return nullptr;
-        TreeNode* tmp = root->left;
-        root->left = invertTree(root->right);
-        root->right = invertTree(tmp);
-        return root;
+    int diameterOfBinaryTree(TreeNode* root) {
+        ans = 1;
+        depth(root);
+        return ans - 1;
     }
 };
