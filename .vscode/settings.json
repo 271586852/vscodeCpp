@@ -72,6 +72,8 @@
         "set": "cpp",
         "xmemory0": "cpp",
         "xstddef": "cpp",
-        "xtree": "cpp"
-    }
+        "xtree": "cpp",
+        "chrono": "cpp"
+    },
+    "C_Cpp.errorSquiggles": "enabled"
 }
