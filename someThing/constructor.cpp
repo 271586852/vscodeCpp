@@ -12,9 +12,10 @@ public:
     //构造函数
     A(char c, int a, short b):c(c),a(a),b(b){}
     //拷贝构造函数
-    A(const A& a):c(a.c),a(a.a),b(a.b){
-        std::cout << "Copy constructor called" << std::endl;
-    }
+    // A(const A& a):c(a.c),a(a.a),b(a.b){
+    //     std::cout << "Copy constructor called" << std::endl;
+    // }
+    A(const A& a) = default;
     //移动构造函数
     A(A&& a):c(a.c),a(a.a),b(a.b){
         std::cout << "Move constructor called" << std::endl;
@@ -61,8 +62,15 @@ int main() {
 
     auto a1 = "hello";
     auto a2 = std::string("hello");
-    A a;
-    A b('a', 1, 2);
-    std::cout << a.c << " " << a.a << " " << a.b << std::endl;
+    A a; // default constructor
+    A b('a', 1, 2); // constructor
+    A c(b); // copy constructor
+    A d(std::move(b)); // move constructor
+    A e = 1; // 类型转换构造函数
+    A f = A(1, 2); // 委托构造函数
+    A g = b ; // 拷贝构造函数，非赋值运算符
+    g = f; // 赋值运算符
+    g = std::move(f); // 移动赋值运算符
+    std::cout << c.c << " " << c.a << " " << c.b << std::endl;
     return 0;
 }
