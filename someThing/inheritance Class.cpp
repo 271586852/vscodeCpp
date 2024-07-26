@@ -30,6 +30,6 @@ int main(){
     // d.make();
     Tea t;
     t.make();
-    // t.Drink::make();
+    t.Drink::make(); //显式调用基类成员函数
     return 0;
 }

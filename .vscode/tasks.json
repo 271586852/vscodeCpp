@@ -1,32 +1,19 @@
 {
   "options": {
-    "shell": {
-      "args": [
-        "/S",
-        "/C",
-        "\"\"F:\\Microsoft Visual Studio\\2022\\VC\\Tools\\MSVC\\14.37.32822\\bin\\HostX64\\x64\\cl.exe\\..\\..\\..\\..\\..\\..\\..\\Auxiliary\\Build\\vcvars64.bat\"",
-        "&&"
-      ],
-      "executable": "C:\\Windows\\System32\\cmd.exe"
+    "env": {
+      "Path": "C:\\MinGW\\mingw64\\bin;${env:Path}"
     }
   },
   "tasks": [
     {
       "args": [
-        "/Zi",
+        "-g",
         "${file}",
-        "/Fe:",
+        "-o",
         "${fileDirname}\\${fileBasenameNoExtension}.exe",
-        "/EHsc",
-        "/execution-charset:utf-8",
-        "/source-charset:utf-8",
-        "/std:c++20",
-        {
-          "quoting": "escape",
-          "value": "\""
-        }
+        "-std=c++23"
       ],
-      "command": "cl.exe",
+      "command": "C:\\MinGW\\mingw64\\bin\\g++.exe",
       "group": {
         "isDefault": true,
         "kind": "build"
@@ -40,8 +27,8 @@
         "reveal": "silent",
         "showReuseMessage": false
       },
-      "problemMatcher": "$msCompile",
-      "type": "shell"
+      "problemMatcher": "$gcc",
+      "type": "process"
     },
     {
       "args": [],
@@ -50,7 +37,9 @@
       "label": "run and pause",
       "options": {
         "cwd": "${fileDirname}",
-        "env": {}
+        "env": {
+          "Path": "C:\\MinGW\\mingw64\\bin;${env:Path}"
+        }
       },
       "presentation": {
         "clear": true,

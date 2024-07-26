@@ -1,0 +1,22 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "build",
+            "type": "shell",
+            "command": "g++",
+            "args": [
+                "-std=c++20",          // 设置 C++20 标准
+                "-o",
+                "output",              // 输出文件名
+                "${file}"              // 当前打开的文件
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "problemMatcher": ["$gcc"],
+            "detail": "Generated task by GitHub Copilot"
+        }
+    ]
+}

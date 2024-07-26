@@ -1,22 +1,22 @@
 {
   "configurations": [
     {
-      "MIMode": "",
+      "MIMode": "gdb",
       "args": [],
-      "console": "externalTerminal",
       "cwd": "${fileDirname}",
       "env": {
-        "PATH": "F:\\Microsoft Visual Studio\\2022\\VC\\Tools\\MSVC\\14.37.32822\\bin\\HostX64\\x64;${env:PATH}"
+        "PATH": "C:\\MinGW\\mingw64\\bin;${env:PATH}"
       },
       "environment": [],
+      "externalConsole": true,
       "internalConsosleOptions": "neverOpen",
-      "miDebuggerPath": "F:\\Microsoft Visual Studio\\2022\\VC\\Tools\\MSVC\\14.37.32822\\bin\\HostX64\\x64\\.exe",
+      "miDebuggerPath": "C:\\MinGW\\mingw64\\bin\\gdb.exe",
       "name": "single file debug",
       "preLaunchTask": "single file build",
       "program": "${fileDirname}\\${fileBasenameNoExtension}.exe",
       "request": "launch",
       "stopAtEntry": false,
-      "type": "cppvsdbg"
+      "type": "cppdbg"
     }
   ],
   "version": "0.2.0"
