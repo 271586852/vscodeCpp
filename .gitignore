@@ -9,3 +9,5 @@
 *.pcb
 
 *.pdb
+
+.vscode/
