@@ -4,7 +4,7 @@ template<typename T>
 class MyArray {
 
 private:
-    T* data;
+    T* data;  //为何要用T* data而不是T data?
     int size;
     int capacity;
 
