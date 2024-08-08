@@ -9,8 +9,9 @@ class ListNode {
     private:
         T data;
         ListNode<T>* next;
+        ListNode<T>* prev;
     public:
-        ListNode():next(nullptr);
+        ListNode():next(nullptr),prev(nullptr);
         ListNode(T data);
         
 
