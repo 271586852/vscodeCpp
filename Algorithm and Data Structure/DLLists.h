@@ -10,6 +10,7 @@ class ListNode {
         T data;
         ListNode<T>* next;
         ListNode<T>* prev;
+        
     public:
         ListNode():next(nullptr),prev(nullptr);
         ListNode(T data);
@@ -21,4 +22,20 @@ class ListNode {
         void insert(T data);
         void remove(T data);
         void setData(T data);
+};
+
+template<typename T>
+class DLList {
+    private:
+        ListNode<T>* head;
+        ListNode<T>* tail;
+        int size;
+        
+    public:
+        DLList();
+        void printList();
+        int search(T data);
+        void insert(T data);
+        void remove(T data);
+        int getSize();
 };
